@@ -1,0 +1,34 @@
+<div class="col-12">
+<div class="col-3"></div><div class="col-9">
+<h1>Call For Papers for JUG Day 2014</h1>
+<br><br>
+<form>
+    <div class="form-fields">
+        <input type="text" class="input-small" id="fName" placeholder="First Name"ng-model="callFor_Paper.fName">
+        <input type="text" class="input-small" id="lName" placeholder="last Name" ng-model="callFor_Paper.lName">
+    </div>
+    <div class="form-fields">
+        <input type="email" class="input-large" id="email" placeholder="E-mail address " ng-model="callFor_Paper.mail"><br/>
+		 <span class="label input-append label-info" style="width: 150px;" ><i class="icon-facebook"></i> www.facebook.com/</span><input type="text" class="input-small" id="facebook" placeholder="facebook id" ng-model="callFor_Paper.facebook"><br/>
+		 <span class="label input-append  label-info"  style="width: 150px"><i class="icon-twitter"></i> www.twitter.com/ </span><input type="text" class="input-small" id="twitter" placeholder="twitter id" ng-model="callFor_Paper.twitter">
+    </div>
+   
+    <div class="input-large">
+        <fieldset>
+                <label>Type of presentation</label>
+            <input type="radio" ng-model="callFor_Paper.callType" value="Talk"> Talk  <br/>
+            <input type="radio" ng-model="callFor_Paper.callType" value="Workshop"> Workshop <br/>
+
+
+        </fieldset>
+    </div>
+    <div class="form-fields">
+        <input type="text" class="input-large" id="topic" placeholder="Topic" ng-model="callFor_Paper.topic">
+        <textarea class="input-large" rows="10" placeholder="Description" ng-model="callFor_Paper.description"></textarea>
+    </div>
+    <div>
+    <button class="btn btn-success btn-large" ng-click="sendCall()" style="margin-left: 300px">Send</button>
+    </div>
+</form>
+</div>
+</div>

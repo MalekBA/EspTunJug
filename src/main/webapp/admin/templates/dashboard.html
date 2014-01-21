@@ -1,0 +1,110 @@
+
+<div class="col-12">
+    <h2 class="text-center">Call For Papers</h2><br> <br>
+
+
+    <div class="col-2"></div>
+    <div class="col-2"><button class="btn-alpha btn-block btn-large btn-info" ng-click="filterON=false;">All calls</button></div>
+    <div class="col-2"><button class="btn-alpha btn-block btn-large btn-success" ng-click="filterON=true;filterCriteria='accepted';">Accepted calls</button></div>
+    <div class="col-2"><button class="btn-alpha btn-block btn-large btn-warning" ng-click="filterON=true;filterCriteria='waiting';">Waiting calls</button></div>
+    <div class="col-2"><button class="btn-alpha btn-block btn-large btn-danger" ng-click="filterON=true;filterCriteria='denied';">Denied calls</button></div>
+    <div class="col-2"></div>
+    <div class="col-12" ng-repeat="call in calls">
+      
+      <div class="col-2">
+      </div>
+      <span ng-if="!filterON">
+      	<div class="col-8 row docs-example">
+          <fieldset>
+              <div class="col-6 form-fields">
+
+                  <label> Call from : {{call.fName}} {{call.lName}}</label><br/>
+                  <label><i class="icon-envelope"></i> E-mail address: {{call.mail}} </label>
+                  <label> Presentation form: {{call.callType}} </label>
+                  <label> Topic: {{call.topic}} </label>
+                   <button class="btn-alpha btn-small btn-info" ng-click="checked=!checked" ng-init="checked=false" >description</button>
+                  <button class="btn-alpha btn-small btn-success"  ng-click="call.status='accepted'; modCall(call);" ng-hide="call.status=='accepted'">Accept</button>
+                  <button class="btn-alpha btn-small btn-warning"  ng-click="call.status='waiting'; modCall(call);" ng-hide="call.status=='waiting'">Stand by</button>
+                  <button class="btn-alpha btn-small btn-danger"  ng-click="call.status='denied'; modCall(call);" ng-hide="call.status=='denied'">Deny</button>
+                  <span ng-if="checked" class="fadeInDown">
+                    <p>
+                        {{call.description}}
+                    </p>
+                  </span>
+
+              </div>
+           
+          <div class="col-2 form-fields" align="right">
+              <div ng-switch on="call.status">
+                  <span class="label label-warning" ng-switch-when="waiting">waiting</span>
+                  <span class="label label-success" ng-switch-when="accepted">accepted</span>
+                  <span class="label label-danger" ng-switch-when="denied">denied</span>
+              </div>
+              <br><br>
+          	<label><i class="icon-facebook"></i><a href="http://www.facebook.com/{{call.facebook}}">{{call.facebook}}</a></label><br/>
+              <label><i class="icon-twitter"></i><a href="http://www.twitter.com/{{call.twitter}}">{{call.twitter}}</a></label>
+          </div>
+         </fieldset>
+          </div>
+          </span>
+          
+          
+          
+          
+          
+          
+          
+          <span ng-if="filterON">
+          	<span ng-if="call.status==filterCriteria">
+      	<div class="col-8 row docs-example">
+          <fieldset>
+              <div class="col-6 form-fields">
+
+                  <label> Call from : {{call.fName}} {{call.lName}}</label><br/>
+                  <label><i class="icon-envelope"></i> E-mail address: {{call.mail}} </label>
+                  <label> Presentation form: {{call.callType}} </label>
+                  <label> Topic: {{call.topic}} </label>
+                   <button class="btn-alpha btn-small btn-info" ng-click="checked=!checked" ng-init="checked=false" >description</button>
+                  <button class="btn-alpha btn-small btn-success"  ng-click="call.status='accepted'; modCall(call);" ng-hide="call.status=='accepted'">Accept</button>
+                  <button class="btn-alpha btn-small btn-warning"  ng-click="call.status='waiting'; modCall(call);" ng-hide="call.status=='waiting'">Stand by</button>
+                  <button class="btn-alpha btn-small btn-danger"  ng-click="call.status='denied'; modCall(call);" ng-hide="call.status=='denied'">denie</button>
+                  <span ng-if="checked" class="fadeInDown">
+                    <p>
+                        {{call.description}}
+                    </p>
+                  </span>
+
+              </div>
+           
+          <div class="col-2 form-fields" align="right">
+              <div ng-switch on="call.status">
+                  <span class="label label-warning" ng-switch-when="waiting">waiting</span>
+                  <span class="label label-success" ng-switch-when="accepted">accepted</span>
+                  <span class="label label-danger" ng-switch-when="denied">denied</span>
+              </div>
+              <br><br>
+          	<label><i class="icon-facebook"></i><a href="http://www.facebook.com/{{call.facebook}}">{{call.facebook}}</a></label><br/>
+              <label><i class="icon-twitter"></i><a href="http://www.twitter.com/{{call.twitter}}">{{call.twitter}}</a></label>
+          </div>
+         </fieldset>
+          </div>
+          </span>
+          </span>
+          <div class="col-2"></div>
+
+        </div>
+    </div>
+
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
+
+
+
+
+
+
+
+
+
+
+
